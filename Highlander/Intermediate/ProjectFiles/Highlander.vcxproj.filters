@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Highlander.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Highlander.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\HighlanderEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Highlander">
+      <UniqueIdentifier>{041FECA6-5630-3ABA-B3DE-E005E0083AF8}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Highlander\Highlander.Build.cs">
+      <Filter>Source\Highlander</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Highlander\Highlander.cpp">
+      <Filter>Source\Highlander</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Highlander\Highlander.h">
+      <Filter>Source\Highlander</Filter>
+    </ClCompile>
+    <Filter Include="Source\Highlander\Private">
+      <UniqueIdentifier>{1DE13FC9-B9EE-3084-94D4-D70EBC91F153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Highlander\Private\Items">
+      <UniqueIdentifier>{4CB313EE-F437-31BA-BE6B-AAEDB8A71882}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Private\Items\Item.cpp">
+      <Filter>Source\Highlander\Private\Items</Filter>
+    </ClCompile>
+    <Filter Include="Source\Highlander\Private\Pawns">
+      <UniqueIdentifier>{D3C83C72-436E-3602-A72B-C47F1B9A7B35}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Private\Pawns\Bird.cpp">
+      <Filter>Source\Highlander\Private\Pawns</Filter>
+    </ClCompile>
+    <Filter Include="Source\Highlander\Public">
+      <UniqueIdentifier>{154D5C23-292B-3A34-AE0B-5E081FFBDB0A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Highlander\Public\Items">
+      <UniqueIdentifier>{D2129491-8732-3560-B588-184AB3D16500}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Public\Items\Item.h">
+      <Filter>Source\Highlander\Public\Items</Filter>
+    </ClCompile>
+    <Filter Include="Source\Highlander\Public\Pawns">
+      <UniqueIdentifier>{BFAA5A5A-7C06-353D-A897-A1BA385A093E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Public\Pawns\Bird.h">
+      <Filter>Source\Highlander\Public\Pawns</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

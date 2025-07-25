@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Highlander",
+			"Path": "..\\Source\\Highlander.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "HighlanderEditor",
+			"Path": "..\\Source\\HighlanderEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

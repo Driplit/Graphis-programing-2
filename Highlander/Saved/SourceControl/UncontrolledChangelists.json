@@ -1,0 +1,17 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Blueprints/Items/BP_Item.uasset",
+				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Blueprints/Pawns/BP_Bird.uasset",
+				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Blueprints/BP_Bird.uasset",
+				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Blueprints/BP_Item.uasset",
+				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/M_DevMap.umap",
+				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Maps/M_DevMap.umap"
+			]
+		}
+	]
+}

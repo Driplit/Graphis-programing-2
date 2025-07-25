@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\unrealengine\\graphis-programing-2\\highlander\\source\\highlander\\private\\pawns\\bird.cpp",
+        "ProvidedModule": "",
+        "PCH": "f:\\unrealengine\\graphis-programing-2\\highlander\\intermediate\\build\\win64\\x64\\highlandereditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderunreal5_3.h.pch",
+        "Includes": [
+            "f:\\unrealengine\\graphis-programing-2\\highlander\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\highlander\\definitions.highlander.h",
+            "f:\\unrealengine\\graphis-programing-2\\highlander\\source\\highlander\\public\\pawns\\bird.h",
+            "f:\\unrealengine\\graphis-programing-2\\highlander\\intermediate\\build\\win64\\unrealeditor\\inc\\highlander\\uht\\bird.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\capsulecomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

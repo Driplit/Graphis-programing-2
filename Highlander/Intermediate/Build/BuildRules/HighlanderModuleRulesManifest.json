@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"F:\\UnrealEngine\\Graphis-programing-2\\Highlander\\Source\\Highlander\\Highlander.Build.cs",
+		"F:\\UnrealEngine\\Graphis-programing-2\\Highlander\\Source\\Highlander.Target.cs",
+		"F:\\UnrealEngine\\Graphis-programing-2\\Highlander\\Source\\HighlanderEditor.Target.cs"
+	],
+	"EngineVersion": "5.5.4"
+}
