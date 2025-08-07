@@ -27,6 +27,6 @@ public :
 	float GroundSpeed;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Movement")
-	bool isFalling;
+	bool IsFalling;
 
 };
