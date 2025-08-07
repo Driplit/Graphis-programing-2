@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HighlanderModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7d638570b33a58d4b385b66f2a56f06d94ecca9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+153e6b9133b8b6efbd601d0c6d7b080d9e4ef246")]
 [assembly: System.Reflection.AssemblyProductAttribute("HighlanderModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HighlanderModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

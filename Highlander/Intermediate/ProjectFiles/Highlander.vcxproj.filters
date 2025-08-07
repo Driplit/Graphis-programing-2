@@ -11,6 +11,8 @@
     <None Include="..\..\Source\HighlanderEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -42,6 +44,15 @@
     <Filter Include="Source\Highlander\Private">
       <UniqueIdentifier>{1DE13FC9-B9EE-3084-94D4-D70EBC91F153}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Highlander\Private\Characters">
+      <UniqueIdentifier>{541AB05C-6F89-3E09-AB43-9AA8EDF4103F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Private\Characters\SlashAnimInstance.cpp">
+      <Filter>Source\Highlander\Private\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Highlander\Private\Characters\SlashCharacter.cpp">
+      <Filter>Source\Highlander\Private\Characters</Filter>
+    </ClCompile>
     <Filter Include="Source\Highlander\Private\Items">
       <UniqueIdentifier>{4CB313EE-F437-31BA-BE6B-AAEDB8A71882}</UniqueIdentifier>
     </Filter>
@@ -57,6 +68,15 @@
     <Filter Include="Source\Highlander\Public">
       <UniqueIdentifier>{154D5C23-292B-3A34-AE0B-5E081FFBDB0A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Highlander\Public\Characters">
+      <UniqueIdentifier>{BF3DFDB8-8C62-383F-A622-77CF58AFE02D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Public\Characters\SlashAnimInstance.h">
+      <Filter>Source\Highlander\Public\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Highlander\Public\Characters\SlashCharacter.h">
+      <Filter>Source\Highlander\Public\Characters</Filter>
+    </ClCompile>
     <Filter Include="Source\Highlander\Public\Items">
       <UniqueIdentifier>{D2129491-8732-3560-B588-184AB3D16500}</UniqueIdentifier>
     </Filter>
