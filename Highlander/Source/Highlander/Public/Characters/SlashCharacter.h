@@ -26,6 +26,10 @@ protected:
 	void Turn(float Value);
 	void LookUp(float Value);
 	void MoveRight(float Value);
+	//attack
+	//dodge/roll
+	//use item
+
 	
 
 private:
