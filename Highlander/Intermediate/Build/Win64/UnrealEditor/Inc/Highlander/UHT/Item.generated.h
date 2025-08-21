@@ -9,12 +9,22 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef HIGHLANDER_Item_generated_h
 #error "Item.generated.h already included, missing '#pragma once' in Item.h"
 #endif
 #define HIGHLANDER_Item_generated_h
 
-#define FID_Highlander_Source_Highlander_Public_Items_Item_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_Highlander_Source_Highlander_Public_Items_Item_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnSphereEndOverlap); \
+	DECLARE_FUNCTION(execOnSphereOverlap); \
+	DECLARE_FUNCTION(execTransformedCos); \
+	DECLARE_FUNCTION(execTransformedSin);
+
+
+#define FID_Highlander_Source_Highlander_Public_Items_Item_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAItem(); \
 	friend struct Z_Construct_UClass_AItem_Statics; \
@@ -23,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(AItem)
 
 
-#define FID_Highlander_Source_Highlander_Public_Items_Item_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_Highlander_Source_Highlander_Public_Items_Item_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AItem(AItem&&); \
@@ -35,12 +45,13 @@ public: \
 	NO_API virtual ~AItem();
 
 
-#define FID_Highlander_Source_Highlander_Public_Items_Item_h_9_PROLOG
-#define FID_Highlander_Source_Highlander_Public_Items_Item_h_12_GENERATED_BODY \
+#define FID_Highlander_Source_Highlander_Public_Items_Item_h_11_PROLOG
+#define FID_Highlander_Source_Highlander_Public_Items_Item_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Highlander_Source_Highlander_Public_Items_Item_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Highlander_Source_Highlander_Public_Items_Item_h_12_ENHANCED_CONSTRUCTORS \
+	FID_Highlander_Source_Highlander_Public_Items_Item_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Highlander_Source_Highlander_Public_Items_Item_h_14_INCLASS_NO_PURE_DECLS \
+	FID_Highlander_Source_Highlander_Public_Items_Item_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

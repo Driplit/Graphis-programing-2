@@ -4,10 +4,17 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "CharacterTypes.h"
 #include "SlashCharacter.generated.h"
+
 
 class USpringArmComponent;
 class UCameraComponent;
+class AItem;
+
+
+
+
 
 UCLASS()
 class HIGHLANDER_API ASlashCharacter : public ACharacter
@@ -26,6 +33,7 @@ protected:
 	void Turn(float Value);
 	void LookUp(float Value);
 	void MoveRight(float Value);
+	void EKeyPressed();
 	//attack
 	//dodge/roll
 	//use item
@@ -33,9 +41,19 @@ protected:
 	
 
 private:
+
+	ECharacterState CharacterState = ECharacterState::ECS_Unequipped ;
+
 	UPROPERTY(VIsibleAnywhere)
 	USpringArmComponent* CameraBoom;
 
 	UPROPERTY(VIsibleAnywhere)
 	UCameraComponent* ViewCamera;
+
+	UPROPERTY(VisibleInstanceOnly)
+	AItem* OverlappingItem;
+
+public:
+	FORCEINLINE void SetOverlappingItem(AItem* Item) { OverlappingItem = Item; }//only use with getters and setters
+	FORCEINLINE ECharacterState GetCharacterState() const { return CharacterState; }
 };
