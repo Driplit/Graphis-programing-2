@@ -33,7 +33,7 @@ protected:
 	void Turn(float Value);
 	void LookUp(float Value);
 	void MoveRight(float Value);
-	void EKeyPressed();
+	void EKeyPressed();//to pickup weapons or items
 	//attack
 	//dodge/roll
 	//use item

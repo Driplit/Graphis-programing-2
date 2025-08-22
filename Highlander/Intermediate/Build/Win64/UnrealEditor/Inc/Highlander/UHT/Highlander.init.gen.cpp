@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeHighlander_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xC1EDFF2F,
+				0xFC296143,
 				0x050F5E7B,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeHighlander_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_Highlander.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Highlander(Z_Construct_UPackage__Script_Highlander, TEXT("/Script/Highlander"), Z_Registration_Info_UPackage__Script_Highlander, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xC1EDFF2F, 0x050F5E7B));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Highlander(Z_Construct_UPackage__Script_Highlander, TEXT("/Script/Highlander"), Z_Registration_Info_UPackage__Script_Highlander, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xFC296143, 0x050F5E7B));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
