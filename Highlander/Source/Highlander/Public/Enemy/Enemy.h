@@ -54,7 +54,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	void Die();
-	void DestroyEnemy();
+	
 
 
 	/**

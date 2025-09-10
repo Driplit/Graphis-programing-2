@@ -42,7 +42,7 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* BoxTraceEnd;
 
-	float Damage = 20.f;
+	float Damage = 75.f;
 
 	
 public:
