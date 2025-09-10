@@ -7,6 +7,7 @@
 #include "Items/Item.h"
 #include "Items/Weapons/Weapon.h"
 #include "Animation/AnimInstance.h"
+#include "Components/BoxComponent.h"
 
 ASlashCharacter::ASlashCharacter()
 {
@@ -52,6 +53,15 @@ void ASlashCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
     PlayerInputComponent->BindAction("HeavyAttack", IE_Pressed, this, &ASlashCharacter::HeavyAttack);
 }
 
+void ASlashCharacter::SetWeaponCollisionEnabled(ECollisionEnabled::Type CollisionEnabled)
+{
+    if (EquippedWeapon && EquippedWeapon->GetWeaponBox())
+    {
+        EquippedWeapon->GetWeaponBox()->SetCollisionEnabled(CollisionEnabled);
+        EquippedWeapon->IgnoreActors.Empty();
+    }
+}
+
 void ASlashCharacter::MoveForward(float Value)
 {
     if (Controller && (Value != 0.0f))
@@ -91,7 +101,7 @@ void ASlashCharacter::EKeyPressed()
     AWeapon* OverlappingWeapon = Cast<AWeapon>(OverlappingItem);
     if (OverlappingWeapon)
     {
-        OverlappingWeapon->Equip(GetMesh(), FName("RightHandSocket"));
+        OverlappingWeapon->Equip(GetMesh(), FName("RightHandSocket"), this, this);
         CharacterState = ECharacterState::ECS_EquippedOneHandedWeapon;
 		OverlappingItem = nullptr;
 		EquippedWeapon = OverlappingWeapon;
@@ -203,7 +213,7 @@ void ASlashCharacter::PlayAttackMontage()
     GetWorldTimerManager().SetTimer(ComboResetTimer, this, &ASlashCharacter::ResetCombo, 1.0f, false);
 }
 
-void ASlashCharacter::PlayEquipMontage(FName SectionName)
+void ASlashCharacter::PlayEquipMontage(const FName& SectionName)
 {
     UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
     if (!AnimInstance || !EquipMontage) return;
@@ -217,6 +227,8 @@ void ASlashCharacter::PlayEquipMontage(FName SectionName)
 void ASlashCharacter::EnableCombo()
 {
     bCanCombo = true;
+    UE_LOG(LogTemp, Warning, TEXT("Combo window enabled"));
+
 
     if (bComboInputBuffered)
     {
@@ -239,6 +251,7 @@ void ASlashCharacter::ResetCombo()
 
 void ASlashCharacter::AttackEnd()
 {
+    UE_LOG(LogTemp, Warning, TEXT("Attack ended"));
     ActionState = EActionState::EAS_Unoccupied;
 }
 
