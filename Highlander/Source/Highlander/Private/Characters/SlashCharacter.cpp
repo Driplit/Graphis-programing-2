@@ -7,7 +7,11 @@
 #include "Items/Item.h"
 #include "Items/Weapons/Weapon.h"
 #include "Animation/AnimInstance.h"
+#include "Components/AttributeComponent.h"
 #include "Components/BoxComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "HUD/SlashHUD.h"
+#include "HUD/GameOverlay.h"
 
 ASlashCharacter::ASlashCharacter()
 {
@@ -20,6 +24,12 @@ ASlashCharacter::ASlashCharacter()
     GetCharacterMovement()->bOrientRotationToMovement = true;
     GetCharacterMovement()->RotationRate = FRotator(0.f, 400.f, 0.f);
 
+	GetMesh()->SetCollisionObjectType(ECollisionChannel::ECC_WorldDynamic);
+	GetMesh()->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
+	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Visibility, ECollisionResponse::ECR_Block);
+    GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_WorldDynamic, ECollisionResponse::ECR_Overlap);
+	GetMesh()->SetGenerateOverlapEvents(true);
+
     CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
     CameraBoom->SetupAttachment(GetRootComponent());
     CameraBoom->TargetArmLength = 600.f;
@@ -31,6 +41,28 @@ ASlashCharacter::ASlashCharacter()
 void ASlashCharacter::BeginPlay()
 {
     Super::BeginPlay();
+
+	Tags.Add(FName("SlashCharacter"));
+
+    InitializeGameOverlay();
+}
+
+void ASlashCharacter::InitializeGameOverlay()
+{
+    APlayerController* PlayerController = Cast<APlayerController>(GetController());
+    if (PlayerController)
+    {
+        ASlashHUD* SlashHUD = Cast<ASlashHUD>(PlayerController->GetHUD());
+        if (SlashHUD)
+        {
+            GameOverlay = SlashHUD->GetGameOverlay();
+            if (GameOverlay && Attributes)
+            {
+                GameOverlay->SetHealthPercent(Attributes->GetHealthPercent());
+                GameOverlay->SetKills(3);
+            }
+        }
+    }
 }
 
 void ASlashCharacter::Tick(float DeltaTime)
@@ -53,14 +85,38 @@ void ASlashCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
     PlayerInputComponent->BindAction("HeavyAttack", IE_Pressed, this, &ASlashCharacter::HeavyAttack);
 }
 
-void ASlashCharacter::SetWeaponCollisionEnabled(ECollisionEnabled::Type CollisionEnabled)
+void ASlashCharacter::GetHit_Implementation(const FVector& ImpactPoint)
 {
-    if (EquippedWeapon && EquippedWeapon->GetWeaponBox())
+	Super::GetHit_Implementation(ImpactPoint);
+    if (Attributes && Attributes->IsAlive())
     {
-        EquippedWeapon->GetWeaponBox()->SetCollisionEnabled(CollisionEnabled);
-        EquippedWeapon->IgnoreActors.Empty();
+        PlayHitReactMontage(FName("HitReact"));
+    }
+    else
+    {
+        Die();
+    }
+    
+    //hit the player
+}
+
+float ASlashCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+    HandleDamage(DamageAmount);
+    SetHUDHealth();
+
+    return DamageAmount;
+}
+
+void ASlashCharacter::SetHUDHealth()
+{
+    if (GameOverlay && Attributes)
+    {
+        GameOverlay->SetHealthPercent(Attributes->GetHealthPercent());
     }
 }
+
+
 
 void ASlashCharacter::MoveForward(float Value)
 {
@@ -123,6 +179,7 @@ void ASlashCharacter::EKeyPressed()
 
 void ASlashCharacter::Attack()
 {
+    Super::Attack();
 	
     if(CanAttack())
     {
@@ -132,7 +189,7 @@ void ASlashCharacter::Attack()
 	
 }
 
-bool ASlashCharacter::CanAttack() const
+bool ASlashCharacter::CanAttack() 
 {
     
     return ActionState == EActionState::EAS_Unoccupied && CharacterState != ECharacterState::ECS_Unequipped;
@@ -169,8 +226,11 @@ void ASlashCharacter::HeavyAttack()
 
 }
 
+
+
 void ASlashCharacter::PlayAttackMontage()
 {
+    Super::PlayAttackMontage();
     UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
     if (!AnimInstance || !AttackMontage) return;
 

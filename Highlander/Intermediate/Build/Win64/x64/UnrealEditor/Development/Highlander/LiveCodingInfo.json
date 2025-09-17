@@ -1,5 +1,43 @@
 {
 	"RemapUnityFiles": 
 	{
+		"Module.Highlander.cpp.obj": [
+			"AttributeComponent.gen.cpp.obj",
+			"BaseCharacter.gen.cpp.obj",
+			"Bird.gen.cpp.obj",
+			"CharacterTypes.gen.cpp.obj",
+			"CPPGame.gen.cpp.obj",
+			"Enemy.gen.cpp.obj",
+			"GameOverlay.gen.cpp.obj",
+			"HealthBar.gen.cpp.obj",
+			"HealthBarComponent.gen.cpp.obj",
+			"Highlander.init.gen.cpp.obj",
+			"HitInterface.gen.cpp.obj",
+			"Item.gen.cpp.obj",
+			"MainMenu.gen.cpp.obj",
+			"MyGameModeBase.gen.cpp.obj",
+			"SlashAnimInstance.gen.cpp.obj",
+			"SlashCharacter.gen.cpp.obj",
+			"SlashHUD.gen.cpp.obj",
+			"Weapon.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"Highlander.cpp.obj",
+			"BaseCharacter.cpp.obj",
+			"SlashAnimInstance.cpp.obj",
+			"SlashCharacter.cpp.obj",
+			"AttributeComponent.cpp.obj",
+			"CPPGame.cpp.obj",
+			"Enemy.cpp.obj",
+			"GameOverlay.cpp.obj",
+			"HealthBar.cpp.obj",
+			"HealthBarComponent.cpp.obj",
+			"SlashHUD.cpp.obj",
+			"HitInterface.cpp.obj",
+			"Item.cpp.obj",
+			"Weapon.cpp.obj",
+			"MyGameModeBase.cpp.obj",
+			"Bird.cpp.obj",
+			"MainMenu.cpp.obj"
+		]
 	}
 }

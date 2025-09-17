@@ -289,6 +289,9 @@
 /I "F:\UnrealEngine\Graphis-programing-2\Highlander\Intermediate\Build\Win64\UnrealEditor\Inc\Highlander\UHT"
 /I "F:\UnrealEngine\Graphis-programing-2\Highlander\Source"
 /I "F:\UnrealEngine\Graphis-programing-2\Highlander\Source\Highlander\Public"
+/I "..\Intermediate\Build\Win64\UnrealEditor\Inc\AIModule\UHT"
+/I "Runtime\AIModule\Classes"
+/I "Runtime\AIModule\Public"
 /external:W0
 /external:I "ThirdParty\GuidelinesSupportLibrary\GSL-1144\include"
 /external:I "ThirdParty\RapidJSON\1.1.0"

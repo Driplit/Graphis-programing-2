@@ -145,9 +145,18 @@
     <Filter Include="Source\Highlander\Private">
       <UniqueIdentifier>{1DE13FC9-B9EE-3084-94D4-D70EBC91F153}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Private\CPPGame.cpp">
+      <Filter>Source\Highlander\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Highlander\Private\MyGameModeBase.cpp">
+      <Filter>Source\Highlander\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\Highlander\Private\Characters">
       <UniqueIdentifier>{541AB05C-6F89-3E09-AB43-9AA8EDF4103F}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Private\Characters\BaseCharacter.cpp">
+      <Filter>Source\Highlander\Private\Characters</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Highlander\Private\Characters\SlashAnimInstance.cpp">
       <Filter>Source\Highlander\Private\Characters</Filter>
     </ClCompile>
@@ -157,7 +166,7 @@
     <Filter Include="Source\Highlander\Private\Components">
       <UniqueIdentifier>{ED44CEE2-E671-3FEC-BEBE-83A956F0643F}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\Highlander\Private\Components\AtributeComponent.cpp">
+    <ClCompile Include="..\..\Source\Highlander\Private\Components\AttributeComponent.cpp">
       <Filter>Source\Highlander\Private\Components</Filter>
     </ClCompile>
     <Filter Include="Source\Highlander\Private\Enemy">
@@ -169,10 +178,16 @@
     <Filter Include="Source\Highlander\Private\HUD">
       <UniqueIdentifier>{0A718864-7A31-3189-BE36-AFDA0F71B4E5}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Private\HUD\GameOverlay.cpp">
+      <Filter>Source\Highlander\Private\HUD</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Highlander\Private\HUD\HealthBar.cpp">
       <Filter>Source\Highlander\Private\HUD</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Highlander\Private\HUD\HealthBarComponent.cpp">
+      <Filter>Source\Highlander\Private\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Highlander\Private\HUD\SlashHUD.cpp">
       <Filter>Source\Highlander\Private\HUD</Filter>
     </ClCompile>
     <Filter Include="Source\Highlander\Private\Interfaces">
@@ -199,12 +214,27 @@
     <ClCompile Include="..\..\Source\Highlander\Private\Pawns\Bird.cpp">
       <Filter>Source\Highlander\Private\Pawns</Filter>
     </ClCompile>
+    <Filter Include="Source\Highlander\Private\UI">
+      <UniqueIdentifier>{1C9FFAAB-F3E1-3B3D-9523-7E5D6E86E85E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Private\UI\MainMenu.cpp">
+      <Filter>Source\Highlander\Private\UI</Filter>
+    </ClCompile>
     <Filter Include="Source\Highlander\Public">
       <UniqueIdentifier>{154D5C23-292B-3A34-AE0B-5E081FFBDB0A}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Public\CPPGame.h">
+      <Filter>Source\Highlander\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Highlander\Public\MyGameModeBase.h">
+      <Filter>Source\Highlander\Public</Filter>
+    </ClCompile>
     <Filter Include="Source\Highlander\Public\Characters">
       <UniqueIdentifier>{BF3DFDB8-8C62-383F-A622-77CF58AFE02D}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Public\Characters\BaseCharacter.h">
+      <Filter>Source\Highlander\Public\Characters</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Highlander\Public\Characters\CharacterTypes.h">
       <Filter>Source\Highlander\Public\Characters</Filter>
     </ClCompile>
@@ -217,7 +247,7 @@
     <Filter Include="Source\Highlander\Public\Components">
       <UniqueIdentifier>{E143F744-704B-3C15-98B5-1642B339DED6}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\Highlander\Public\Components\AtributeComponent.h">
+    <ClCompile Include="..\..\Source\Highlander\Public\Components\AttributeComponent.h">
       <Filter>Source\Highlander\Public\Components</Filter>
     </ClCompile>
     <Filter Include="Source\Highlander\Public\Enemy">
@@ -229,10 +259,16 @@
     <Filter Include="Source\Highlander\Public\HUD">
       <UniqueIdentifier>{3E3AA166-C8DF-3517-B886-B4219AA56A73}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Public\HUD\GameOverlay.h">
+      <Filter>Source\Highlander\Public\HUD</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Highlander\Public\HUD\HealthBar.h">
       <Filter>Source\Highlander\Public\HUD</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Highlander\Public\HUD\HealthBarComponent.h">
+      <Filter>Source\Highlander\Public\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Highlander\Public\HUD\SlashHUD.h">
       <Filter>Source\Highlander\Public\HUD</Filter>
     </ClCompile>
     <Filter Include="Source\Highlander\Public\Interfaces">
@@ -258,6 +294,12 @@
     </Filter>
     <ClCompile Include="..\..\Source\Highlander\Public\Pawns\Bird.h">
       <Filter>Source\Highlander\Public\Pawns</Filter>
+    </ClCompile>
+    <Filter Include="Source\Highlander\Public\UI">
+      <UniqueIdentifier>{FBBD2BF1-F3F8-39AF-9F23-E6D820A1A570}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Public\UI\MainMenu.h">
+      <Filter>Source\Highlander\Public\UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

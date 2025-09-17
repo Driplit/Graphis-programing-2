@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
+#include "BaseCharacter.h"	
 #include "CharacterTypes.h"
 #include "SlashCharacter.generated.h"
 
@@ -11,25 +11,32 @@ class USpringArmComponent;
 class UCameraComponent;
 class AItem;
 class UAnimMontage;
-class AWeapon;
+class UGameOverlay;
 
 UCLASS()
-class HIGHLANDER_API ASlashCharacter : public ACharacter
+class HIGHLANDER_API ASlashCharacter : public ABaseCharacter
 {
 	GENERATED_BODY()
 
 public:
+
 	ASlashCharacter();
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual void GetHit_Implementation(const FVector& ImpactPoint) override;
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 
-	UFUNCTION(BlueprintCallable)
-	void SetWeaponCollisionEnabled(ECollisionEnabled::Type CollisionEnabled);
+	void SetHUDHealth();
+
+
+	
 
 	
 
 protected:
 	virtual void BeginPlay() override;
+
+	void InitializeGameOverlay();
 
 	// --- Movement ---
 	void MoveForward(float Value);
@@ -41,15 +48,15 @@ protected:
 	void EKeyPressed(); // to pickup weapons or items
 
 	// --- Combat ---
-	void Attack();
+	virtual void Attack() override;
 	void HeavyAttack();
-	void PlayAttackMontage();
+	virtual void PlayAttackMontage() override;
 	void ResetCombo();
 
-	UFUNCTION(BlueprintCallable)
-	void AttackEnd();
+	
+	virtual void AttackEnd() override;
 
-	bool CanAttack() const;
+	virtual bool CanAttack() override;
 
 
 
@@ -78,12 +85,9 @@ private:
 	UPROPERTY(VisibleInstanceOnly)
 	AItem* OverlappingItem;
 
-	UPROPERTY(VisibleInstanceOnly, Category = Weapon)
-	AWeapon* EquippedWeapon;
+	
 
-	// --- Animation ---
-	UPROPERTY(EditDefaultsOnly, Category = Montages)
-	UAnimMontage* AttackMontage;
+	
 
 	UPROPERTY(EditDefaultsOnly, Category = Montages)
 	UAnimMontage* EquipMontage;
@@ -93,6 +97,9 @@ private:
 	bool bCanCombo = false;            // True if player can chain to the next attack
 	bool bComboInputBuffered = false;  // If player pressed attack during combo window
 	FTimerHandle ComboResetTimer;
+
+	UPROPERTY()
+	UGameOverlay* GameOverlay;
 
 public:
 	FORCEINLINE void SetOverlappingItem(AItem* Item) { OverlappingItem = Item; }

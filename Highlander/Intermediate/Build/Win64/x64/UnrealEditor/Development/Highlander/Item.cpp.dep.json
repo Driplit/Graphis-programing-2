@@ -14,6 +14,7 @@
             "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h",
             "f:\\unrealengine\\graphis-programing-2\\highlander\\source\\highlander\\public\\characters\\slashcharacter.h",
+            "f:\\unrealengine\\graphis-programing-2\\highlander\\source\\highlander\\public\\characters\\basecharacter.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\net\\core\\public\\net\\core\\nettoken\\nettokenexportcontext.h",
@@ -23,6 +24,9 @@
             "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
+            "f:\\unrealengine\\graphis-programing-2\\highlander\\source\\highlander\\public\\interfaces\\hitinterface.h",
+            "f:\\unrealengine\\graphis-programing-2\\highlander\\intermediate\\build\\win64\\unrealeditor\\inc\\highlander\\uht\\hitinterface.generated.h",
+            "f:\\unrealengine\\graphis-programing-2\\highlander\\intermediate\\build\\win64\\unrealeditor\\inc\\highlander\\uht\\basecharacter.generated.h",
             "f:\\unrealengine\\graphis-programing-2\\highlander\\source\\highlander\\public\\characters\\charactertypes.h",
             "f:\\unrealengine\\graphis-programing-2\\highlander\\intermediate\\build\\win64\\unrealeditor\\inc\\highlander\\uht\\slashcharacter.generated.h"
         ],

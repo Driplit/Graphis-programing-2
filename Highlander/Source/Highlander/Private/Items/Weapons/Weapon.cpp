@@ -54,50 +54,52 @@ void AWeapon::OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActo
 
 void AWeapon::OnBoxOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	FHitResult BoxHit;
+	BoxTrace(BoxHit);
+	
+	if (BoxHit.GetActor())
+	{
+		UGameplayStatics::ApplyDamage(BoxHit.GetActor(), Damage, GetInstigator()->GetController(), this, UDamageType::StaticClass());
+		ExecuteGetHit(BoxHit);
+		IgnoreActors.AddUnique(BoxHit.GetActor());	
+	}
+
+
+}
+
+void AWeapon::ExecuteGetHit(FHitResult& BoxHit)
+{
+	AActor* HitActor = BoxHit.GetActor();
+	if (HitActor && HitActor->Implements<UHitInterface>())
+	{
+		IHitInterface::Execute_GetHit(HitActor, BoxHit.ImpactPoint);
+	}
+}
+
+
+void AWeapon::BoxTrace(FHitResult& BoxHit)
+{
 	const FVector Start = BoxTraceStart->GetComponentLocation();
 	const FVector End = BoxTraceEnd->GetComponentLocation();
 
 	TArray<AActor*>ActorsToIgnore;
 	ActorsToIgnore.Add(this);
-	
+
 	for (AActor* Actor : IgnoreActors)
 	{
 		ActorsToIgnore.AddUnique(Actor);
 	}
 
-	FHitResult BoxHit;
-
 	UKismetSystemLibrary::BoxTraceSingle(
 		this,
 		Start,
 		End,
-		FVector(5.f, 5.f, 5.f),
+		BoxTraceExtent,
 		BoxTraceStart->GetComponentRotation(),
 		ETraceTypeQuery::TraceTypeQuery1,
 		false,
 		ActorsToIgnore,
-		EDrawDebugTrace::ForDuration,
+		bShowBoxDebug ? EDrawDebugTrace::ForDuration : EDrawDebugTrace::None,
 		BoxHit,
 		true);
-	
-	if (BoxHit.GetActor())
-	{
-		IHitInterface* HitInterface = Cast<IHitInterface>(BoxHit.GetActor());
-		if (HitInterface)
-		{
-			HitInterface ->GetHit(BoxHit.ImpactPoint);
-		}
-		IgnoreActors.AddUnique(BoxHit.GetActor());
-
-		UGameplayStatics::ApplyDamage
-		(
-			BoxHit.GetActor(),
-			Damage,
-			GetInstigator()->GetController(),
-			this,
-			UDamageType::StaticClass()
-		);
-	}
-
-
 }
