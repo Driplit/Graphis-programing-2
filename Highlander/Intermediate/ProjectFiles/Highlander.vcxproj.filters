@@ -178,6 +178,9 @@
     <Filter Include="Source\Highlander\Private\HUD">
       <UniqueIdentifier>{0A718864-7A31-3189-BE36-AFDA0F71B4E5}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Private\HUD\EndGame.cpp">
+      <Filter>Source\Highlander\Private\HUD</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Highlander\Private\HUD\GameOverlay.cpp">
       <Filter>Source\Highlander\Private\HUD</Filter>
     </ClCompile>
@@ -262,6 +265,9 @@
     <Filter Include="Source\Highlander\Public\HUD">
       <UniqueIdentifier>{3E3AA166-C8DF-3517-B886-B4219AA56A73}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Highlander\Public\HUD\EndGame.h">
+      <Filter>Source\Highlander\Public\HUD</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Highlander\Public\HUD\GameOverlay.h">
       <Filter>Source\Highlander\Public\HUD</Filter>
     </ClCompile>

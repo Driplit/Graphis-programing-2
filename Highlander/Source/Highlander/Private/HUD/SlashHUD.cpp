@@ -3,7 +3,7 @@
 
 #include "HUD/SlashHUD.h"
 #include "HUD/GameOverlay.h"
-
+#include "HUD/EndGame.h"
 void ASlashHUD::BeginPlay()
 {
 	Super::BeginPlay();

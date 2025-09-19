@@ -1,101 +1,126 @@
 #include "CPPGame.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
-#include "Engine/Engine.h"
 #include "HUD/SlashHUD.h"
 #include "Enemy/Enemy.h"
 #include "Components/AttributeComponent.h"
-
+#include "HUD/EndGame.h"
 
 ACPPGame::ACPPGame()
 {
     PrimaryActorTick.bCanEverTick = true;
 
-    // Correct Default Pawn path
+    // --- Set Default Pawn ---
     static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/Blueprints/Characters/BP_SlashCharacter"));
     if (PlayerPawnBPClass.Succeeded())
     {
         DefaultPawnClass = PlayerPawnBPClass.Class;
     }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Failed to find BP_SlashCharacter!"));
-    }
 
+    // --- Set HUD ---
     HUDClass = ASlashHUD::StaticClass();
-}
 
+    // --- Set EndGame Widget ---
+    static ConstructorHelpers::FClassFinder<UUserWidget> EndGameWidgetBP(TEXT("/Game/Blueprints/HUD/WBP_EndGame"));
+    if (EndGameWidgetBP.Succeeded())
+    {
+        EndGameWidgetClass = EndGameWidgetBP.Class;
+    }
+}
 
 void ACPPGame::BeginPlay()
 {
     Super::BeginPlay();
+    
+    APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+    if (!PC) return;
 
     
     TArray<AActor*> FoundEnemies;
-    // Get all actors of class AEnemy
     UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemy::StaticClass(), FoundEnemies);
 
-    // Print number of enemies to screen
-    int32 NumEnemies = FoundEnemies.Num();
-	CurrentEnemies = NumEnemies;
-    if (GEngine)
-    {
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green,
-            FString::Printf(TEXT("Number of enemies in the world: %d"), NumEnemies));
-    }
+    CurrentEnemies = FoundEnemies.Num();
 }
 
 void ACPPGame::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    // --- Player death check ---
+    CheckPlayerDead();
+    CheckForEnemies();
+}
+
+void ACPPGame::CheckPlayerDead()
+{
     APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
     if (PlayerPawn)
     {
         UAttributeComponent* AttrComp = PlayerPawn->FindComponentByClass<UAttributeComponent>();
         if (AttrComp && !AttrComp->IsAlive())
         {
+            bIsPlayerDead = true;
             EndGame();
-            UE_LOG(LogTemp, Warning, TEXT("Player is dead!"));
         }
     }
-
-    // --- Enemy count check ---
-    CheckForEnemies();
 }
 
 void ACPPGame::CheckForEnemies()
 {
     TArray<AActor*> FoundEnemies;
-
     UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemy::StaticClass(), FoundEnemies);
 
     if (CurrentEnemies != FoundEnemies.Num())
     {
         CurrentEnemies = FoundEnemies.Num();
-        if (GEngine)
+        if (CurrentEnemies == 0)
         {
-            GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green,
-                FString::Printf(TEXT("Number of enemies in the world: %d"), CurrentEnemies));
+            bNoEnemiesLeft = true;
+            EndGame();
         }
     }
 }
+
 void ACPPGame::EndGame()
 {
-    UE_LOG(LogTemp, Warning, TEXT("Game Over!"));
+    if (bGameOver) return;
+    bGameOver = true;
 
-    // Option 1: Disable player input
     APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
-    if (PC && PC->GetPawn())
+    if (!PC) return;
+
+    if (PC->GetPawn())
     {
         PC->GetPawn()->DisableInput(PC);
     }
 
-    // Option 2: Show Game Over UI (if you have a HUD)
-    // Example: Cast<ASlashHUD>(PC->GetHUD())->ShowGameOver();
-
-    // Option 3: Stop the game completely
     UGameplayStatics::SetGamePaused(GetWorld(), true);
-}
 
+    PC->bShowMouseCursor = true;
+    FInputModeUIOnly InputMode;
+    InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+    PC->SetInputMode(InputMode);
+
+    if (EndGameWidgetClass)
+    {
+        UEndGame* EndGameWidget = CreateWidget<UEndGame>(PC, EndGameWidgetClass);
+        if (EndGameWidget)
+        {
+            EndGameWidget->AddToViewport(100);
+
+            if (bIsPlayerDead)
+            {
+                EndGameWidget->SetResultMessage(TEXT("YOU LOSE"));
+            }
+            else if (bNoEnemiesLeft)
+            {
+                EndGameWidget->SetResultMessage(TEXT("YOU WIN"));
+            }
+            else
+            {
+                EndGameWidget->SetResultMessage(TEXT("GAME OVER"));
+            }
+        }
+    }
+    FInputModeGameOnly GameInput;
+    PC->SetInputMode(GameInput);
+}

@@ -10,6 +10,7 @@
  * 
  */
 class UGameOverlay;
+class UEndGame;
 
 UCLASS()
 class HIGHLANDER_API ASlashHUD : public AHUD
@@ -26,6 +27,13 @@ private:
 	UPROPERTY()
 	UGameOverlay* GameOverlay;
 
+	
+
+	UPROPERTY()
+	UEndGame* EndGameWidget;
+
 public:
+	
 	FORCEINLINE UGameOverlay* GetGameOverlay() const { return GameOverlay; }
+
 };

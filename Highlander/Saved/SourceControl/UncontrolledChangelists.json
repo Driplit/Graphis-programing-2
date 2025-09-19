@@ -23,6 +23,8 @@
 				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/UI/UI_MainMenu.uasset",
 				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Blueprints/Items/Weapons/MyWeapon.uasset",
 				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Maps/M_MainMenuMap.umap",
+				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Blueprints/HUD/WBP_EndGame.uasset",
+				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Maps/M_EndGameMap.umap",
 				"F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Blueprints/Enemys/BP_SwordsMan.uasset"
 			]
 		}
