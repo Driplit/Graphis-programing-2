@@ -1951,3 +1951,74 @@ Skipped package /AudioModulation/Volume was expected to be found in plugin Audio
 [2025.09.19-15.42.33:418][485]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
 [2025.09.19-15.42.33:418][485]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 10902.562500, Update Interval: 338.630951
 [2025.09.19-15.42.44:243][540]LogDerivedDataCache: C:/Users/c00k_/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:00.026 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 169 files in 320 folders with total size 0 MiB.
+[2025.09.19-15.48.45:471][817]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 11274.925781
+[2025.09.19-15.48.46:471][820]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.09.19-15.48.46:471][820]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 11275.592773, Update Interval: 357.579285
+[2025.09.19-15.52.01:867][515]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.09.19-15.52.01:913][515]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/M_DevMap" FILE="F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Maps/M_DevMap.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2025.09.19-15.52.02:010][515]LogUObjectHash: Compacting FUObjectHashTables data took   3.02ms
+[2025.09.19-15.52.02:037][515]LogSavePackage: Moving output files for package: /Game/Maps/M_DevMap
+[2025.09.19-15.52.02:037][515]LogSavePackage: Moving 'F:/UnrealEngine/Graphis-programing-2/Highlander/Saved/M_DevMap7ED5283D4323A4BAD91FD2A3E3658D9F.tmp' to 'F:/UnrealEngine/Graphis-programing-2/Highlander/Content/Maps/M_DevMap.umap'
+[2025.09.19-15.52.02:055][515]LogFileHelpers: Saving map 'M_DevMap' took 0.146
+[2025.09.19-15.52.02:064][515]LogFileHelpers: InternalPromptForCheckoutAndSave took 197.441 ms
+[2025.09.19-15.52.02:089][515]LogContentValidation: Display: Starting to validate 1 assets
+[2025.09.19-15.52.02:089][515]LogContentValidation: Enabled validators:
+[2025.09.19-15.52.02:089][515]LogContentValidation: 	/Script/DataValidation.EditorValidator_Material
+[2025.09.19-15.52.02:089][515]LogContentValidation: 	/Script/DataValidation.DirtyFilesChangelistValidator
+[2025.09.19-15.52.02:089][515]LogContentValidation: 	/Script/DataValidation.EditorValidator_Localization
+[2025.09.19-15.52.02:089][515]LogContentValidation: 	/Script/DataValidation.PackageFileValidator
+[2025.09.19-15.52.02:089][515]LogContentValidation: 	/Script/DataValidation.WorldPartitionChangelistValidator
+[2025.09.19-15.52.02:089][515]LogContentValidation: 	/Script/InputBlueprintNodes.EnhancedInputUserWidgetValidator
+[2025.09.19-15.52.02:089][515]AssetCheck: /Game/Maps/M_DevMap Validating asset
+[2025.09.19-15.52.03:230][616]LogUObjectHash: Compacting FUObjectHashTables data took   0.31ms
+[2025.09.19-15.52.03:296][616]LogStall: Shutdown...
+[2025.09.19-15.52.03:296][616]LogStall: Shutdown complete.
+[2025.09.19-15.52.03:353][616]LogSlate: Window 'Highlander - Unreal Editor' being destroyed
+[2025.09.19-15.52.03:450][616]Cmd: QUIT_EDITOR
+[2025.09.19-15.52.03:450][617]LogCore: Engine exit requested (reason: UUnrealEdEngine::CloseEditor())
+[2025.09.19-15.52.03:453][617]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2025.09.19-15.52.03:454][617]LogStaticMesh: Abandoning remaining async distance field tasks for shutdown
+[2025.09.19-15.52.03:454][617]LogStaticMesh: Abandoning remaining async card representation tasks for shutdown
+[2025.09.19-15.52.03:455][617]LogWorld: UWorld::CleanupWorld for M_DevMap, bSessionEnded=true, bCleanupResources=true
+[2025.09.19-15.52.03:455][617]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.09.19-15.52.03:472][617]LogStylusInput: Shutting down StylusInput subsystem.
+[2025.09.19-15.52.03:472][617]LogLevelSequenceEditor: LevelSequenceEditor subsystem deinitialized.
+[2025.09.19-15.52.03:494][617]LogStudioTelemetry: Ended StudioTelemetry Session
+[2025.09.19-15.52.03:497][617]LogAnalytics: Display: [UEEditor.Rocket.Release] Destroying ET Analytics provider
+[2025.09.19-15.52.03:498][617]LogAnalytics: Display: [UEEditor.Rocket.Release] Ended ET Analytics provider session
+[2025.09.19-15.52.03:498][617]LogAnalytics: Display: [UEEditor.Rocket.Release] Destroyed ET Analytics provider
+[2025.09.19-15.52.04:098][617]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerXAudio2)...
+[2025.09.19-15.52.04:098][617]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
+[2025.09.19-15.52.04:098][617]LogAudio: Display: Audio Device unregistered from world 'M_DevMap'.
+[2025.09.19-15.52.04:098][617]LogAudio: Display: Shutting down audio device while 1 references to it are still alive. For more information, compile with INSTRUMENT_AUDIODEVICE_HANDLES.
+[2025.09.19-15.52.04:098][617]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1
+[2025.09.19-15.52.04:102][617]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1
+[2025.09.19-15.52.04:158][617]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID -1
+[2025.09.19-15.52.04:158][617]LogAudio: Display: Audio Device Manager Shutdown
+[2025.09.19-15.52.04:159][617]LogWindowsTextInputMethodSystem: Activated input method: English (United States) - (Keyboard).
+[2025.09.19-15.52.04:162][617]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2025.09.19-15.52.04:162][617]LogExit: Preparing to exit.
+[2025.09.19-15.52.04:184][617]LogUObjectHash: Compacting FUObjectHashTables data took   0.62ms
+[2025.09.19-15.52.05:092][617]LogEditorDataStorage: Deinitializing
+[2025.09.19-15.52.05:272][617]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled
+[2025.09.19-15.52.05:313][617]LogExit: Editor shut down
+[2025.09.19-15.52.05:319][617]LogExit: Transaction tracking system shut down
+[2025.09.19-15.52.05:485][617]LogExit: Object subsystem successfully closed.
+[2025.09.19-15.52.05:503][617]LogShaderCompilers: Display: Shaders left to compile 0
+[2025.09.19-15.52.06:538][617]LogMemoryProfiler: Shutdown
+[2025.09.19-15.52.06:539][617]LogNetworkingProfiler: Shutdown
+[2025.09.19-15.52.06:539][617]LoadingProfiler: Shutdown
+[2025.09.19-15.52.06:539][617]LogTimingProfiler: Shutdown
+[2025.09.19-15.52.06:938][617]LogChaosDD: Chaos Debug Draw Shutdown
+[2025.09.19-15.52.06:944][617]LogStudioTelemetry: Display: Shutdown StudioTelemetry Module
+[2025.09.19-15.52.06:944][617]LogNFORDenoise: NFORDenoise function shutting down
+[2025.09.19-15.52.06:944][617]RenderDocPlugin: plugin has been unloaded.
+[2025.09.19-15.52.06:977][617]LogHttp: Warning: [FHttpManager::Shutdown] Unbinding delegates for 1 outstanding Http Requests:
+[2025.09.19-15.52.06:977][617]LogHttp: Warning: 	verb=[POST] url=[https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7B2186BA1B-48FC-931D-488E-41BCA233DC0D%7D&AppID=UEEditor.Rocket.Release&AppVersion=5.5.4-40574608%2B%2B%2BUE5%2BRelease-5.5&UserID=206d3de54159a6d120b4d380d21d31d4%7C3a4caf701e9c413aa69e065a3fad8d49%7C1d7b27a7-9ff4-41d1-bd38-82a1b5544f8a&AppEnvironment=datacollector-binary&UploadType=eteventstream] refs=[2] status=Processing
+[2025.09.19-15.52.07:501][617]LogEOSSDK: FEOSSDKManager::Shutdown EOS_Shutdown Result=[EOS_Success]
+[2025.09.19-15.52.07:504][617]LogIris: FNetObjectFactoryRegistry::UnregisterFactory is unregistering factory: None name: NetActorFactory id: 0
+[2025.09.19-15.52.07:504][617]LogIris: FNetObjectFactoryRegistry::UnregisterFactory is unregistering factory: None name: NetSubObjectFactory id: 1
+[2025.09.19-15.52.07:504][617]LogPakFile: Destroying PakPlatformFile
+[2025.09.19-15.52.07:931][617]LogD3D12RHI: ~FD3D12DynamicRHI
+[2025.09.19-15.52.07:976][617]LogExit: Exiting.
+[2025.09.19-15.52.08:016][617]Log file closed, 09/19/25 11:52:08
