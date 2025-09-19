@@ -297,10 +297,6 @@ void ASlashCharacter::EnableCombo()
     }
 }
 
-void ASlashCharacter::DisableCombo()
-{
-    bCanCombo = false;
-}
 
 void ASlashCharacter::ResetCombo()
 {

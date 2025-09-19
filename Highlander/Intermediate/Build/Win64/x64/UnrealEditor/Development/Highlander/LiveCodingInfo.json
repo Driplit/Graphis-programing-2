@@ -16,6 +16,7 @@
 			"Item.gen.cpp.obj",
 			"MainMenu.gen.cpp.obj",
 			"MyGameModeBase.gen.cpp.obj",
+			"NewMainMenu.gen.cpp.obj",
 			"SlashAnimInstance.gen.cpp.obj",
 			"SlashCharacter.gen.cpp.obj",
 			"SlashHUD.gen.cpp.obj",
@@ -37,7 +38,8 @@
 			"Weapon.cpp.obj",
 			"MyGameModeBase.cpp.obj",
 			"Bird.cpp.obj",
-			"MainMenu.cpp.obj"
+			"MainMenu.cpp.obj",
+			"NewMainMenu.cpp.obj"
 		]
 	}
 }

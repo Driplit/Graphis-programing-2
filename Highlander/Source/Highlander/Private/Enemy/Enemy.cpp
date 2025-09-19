@@ -86,24 +86,30 @@ void AEnemy::MoveToTarget(AActor* Target)
 
 void AEnemy::Die()
 {
-	
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 
 	if (AnimInstance && DeathMontage)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("No equip montage or anim instance"));
 		AnimInstance->Montage_Play(DeathMontage);
 
-		//not needed but good for clarity
+		// Explicitly jump to the "Death" section
 		FName SectionName = FName("Death");
-
 		AnimInstance->Montage_JumpToSection(SectionName, DeathMontage);
+
 		DeathPose = EDeathPose::EDP_Death;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Missing DeathMontage or AnimInstance"));
 	}
 
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+
+
 	SetLifeSpan(3.f);
 }
+
 
 void AEnemy::PawnSeen(APawn* SeenPawn)
 {

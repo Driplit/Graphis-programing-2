@@ -10,12 +10,14 @@
 class UAnimMontage;
 class UHealthBarComponent;
 class UPawnSensingComponent;
-	
+
+
+
 UCLASS()
 class HIGHLANDER_API AEnemy : public ABaseCharacter
 {
 	GENERATED_BODY()
-
+	
 public:
 
 	AEnemy();
@@ -23,6 +25,8 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void GetHit_Implementation(const FVector& ImpactPoint) override;
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
+	
+	
 	
 
 private:
@@ -54,7 +58,7 @@ private:
 	UPROPERTY()
 	class AAIController* EnemyController;
 
-	//current tatget to move to
+	//current target to move to
 	UPROPERTY(EditInstanceOnly, Category = "AI Navigation")
 	AActor* PatrolTarget;
 

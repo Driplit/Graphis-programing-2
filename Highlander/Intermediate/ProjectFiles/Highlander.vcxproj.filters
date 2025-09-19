@@ -220,6 +220,9 @@
     <ClCompile Include="..\..\Source\Highlander\Private\UI\MainMenu.cpp">
       <Filter>Source\Highlander\Private\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Highlander\Private\UI\NewMainMenu.cpp">
+      <Filter>Source\Highlander\Private\UI</Filter>
+    </ClCompile>
     <Filter Include="Source\Highlander\Public">
       <UniqueIdentifier>{154D5C23-292B-3A34-AE0B-5E081FFBDB0A}</UniqueIdentifier>
     </Filter>
@@ -299,6 +302,9 @@
       <UniqueIdentifier>{FBBD2BF1-F3F8-39AF-9F23-E6D820A1A570}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Highlander\Public\UI\MainMenu.h">
+      <Filter>Source\Highlander\Public\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Highlander\Public\UI\NewMainMenu.h">
       <Filter>Source\Highlander\Public\UI</Filter>
     </ClCompile>
   </ItemGroup>

@@ -64,8 +64,8 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	void EnableCombo();
 
-	UFUNCTION(BlueprintCallable)
-	void DisableCombo();
+	/*UFUNCTION(BlueprintCallable)
+	void DisableCombo();*/
 
 
 	void PlayEquipMontage(const FName& SectionName);
